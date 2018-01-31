@@ -1,0 +1,6 @@
+D:\Projects\Prime Numbers Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.csprojResolveAssemblyReference.cache
+D:\Projects\Prime Numbers Generation\Prime Numbers Generation\bin\Debug\Prime Numbers Generation.exe.config
+D:\Projects\Prime Numbers Generation\Prime Numbers Generation\bin\Debug\Prime Numbers Generation.exe
+D:\Projects\Prime Numbers Generation\Prime Numbers Generation\bin\Debug\Prime Numbers Generation.pdb
+D:\Projects\Prime Numbers Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.exe
+D:\Projects\Prime Numbers Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.pdb
