@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Prime_Numbers_Generation
 {
@@ -15,7 +16,12 @@ namespace Prime_Numbers_Generation
 	{
 		public static void Main(string[] args)
 		{
+			Stopwatch stopWatch = new Stopwatch();
+			stopWatch.Start();
 			var d = new PrimeNumber(300000);
+			stopWatch.Stop();
+			TimeSpan time  = stopWatch.Elapsed;
+			Console.WriteLine("Затрачено времени {0:00}.{1:000} секунд \nМассив состоит из {2} элементов", time.Seconds, time.Milliseconds, d.primeNumber.Count);
 			int countOfTests = int.Parse(Console.ReadLine());
 			string [] inputString = Console.ReadLine().Split(' ');
 			
@@ -24,12 +30,14 @@ namespace Prime_Numbers_Generation
 				int result = d.ShowNum(int.Parse(inputString[i])-1);
 				Console.Write("{0} ", result);
 			}
+			
+			Console.ReadLine();
 		}
 	}
 	
 	class PrimeNumber
 	{
-		List <int> primeNumber;
+		public List <int> primeNumber;
 		int n, k;
 		
 		public PrimeNumber(int k)
@@ -40,16 +48,18 @@ namespace Prime_Numbers_Generation
 			
 			for(int i = n; i <=this.k; i++)
 				primeNumber.Add(i);
-			
+			Console.WriteLine("До операции количество элементов в массиве составляет {0}", primeNumber.Count);
 			formQueue();
 		}
 		
 		void formQueue()
 		{
+			int percent=5;
 			for (int j = 0; j < primeNumber.Count; j++)
 			{
 				n = primeNumber[j];
 				int nextPrimary = n*n;
+				
 				if(nextPrimary>k)
 					break;
 			    int i = primeNumber.IndexOf(nextPrimary);
@@ -60,6 +70,11 @@ namespace Prime_Numbers_Generation
 				   	    primeNumber.RemoveAt(i);
 					    i--;
 				    }
+			    }
+			    if(j == 10000)
+			    {
+			    	Console.WriteLine("Выполняется программа... {0}%", percent);
+			    	percent+=5;
 			    }
 			   
 			}
