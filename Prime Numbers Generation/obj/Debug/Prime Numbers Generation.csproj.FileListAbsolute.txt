@@ -4,3 +4,10 @@ D:\Projects\Prime Numbers Generation\Prime Numbers Generation\bin\Debug\Prime Nu
 D:\Projects\Prime Numbers Generation\Prime Numbers Generation\bin\Debug\Prime Numbers Generation.pdb
 D:\Projects\Prime Numbers Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.exe
 D:\Projects\Prime Numbers Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.pdb
+E:\Projects Git\Prime-Numbers-Generation\Prime Numbers Generation\bin\Debug\Prime Numbers Generation.exe.config
+E:\Projects Git\Prime-Numbers-Generation\Prime Numbers Generation\bin\Debug\Prime Numbers Generation.exe
+E:\Projects Git\Prime-Numbers-Generation\Prime Numbers Generation\bin\Debug\Prime Numbers Generation.pdb
+E:\Projects Git\Prime-Numbers-Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.csprojResolveAssemblyReference.cache
+E:\Projects Git\Prime-Numbers-Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.csproj.CoreCompileInputs.cache
+E:\Projects Git\Prime-Numbers-Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.exe
+E:\Projects Git\Prime-Numbers-Generation\Prime Numbers Generation\obj\Debug\Prime Numbers Generation.pdb

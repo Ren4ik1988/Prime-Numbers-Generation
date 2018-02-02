@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Prime_Numbers_Generation
 {
@@ -38,23 +39,40 @@ namespace Prime_Numbers_Generation
 	class PrimeNumber
 	{
 		public List <int> primeNumber;
-		int n, k;
+        List<int> primeNumberSecond;
+        int n, k;
+        Thread thread;
 		
 		public PrimeNumber(int k)
 		{
 			this.n = 2;
 			this.k = k;
 			primeNumber = new List <int>();
-			
-			for(int i = n; i <=this.k; i++)
+            primeNumberSecond = new List<int>();
+
+            thread = new Thread(fillSecondHalf);
+            thread.Start();
+
+			for(int i = n; i <this.k/2; i++)
 				primeNumber.Add(i);
-			Console.WriteLine("До операции количество элементов в массиве составляет {0}", primeNumber.Count);
-			formQueue();
+            formQueueThread(primeNumber);
+
+            primeNumber.AddRange(primeNumberSecond);
+            Console.WriteLine("Формирование первичного списка завершено. Массив содержит {0} значений", primeNumber.Count);
+            Console.ReadLine();
+            formQueue();
 		}
-		
-		void formQueue()
+
+        private void fillSecondHalf()
+        {
+            for (int i = this.k/2; i <= this.k; i++)
+                primeNumberSecond.Add(i);
+            formQueueThread(primeNumberSecond);
+        }
+
+        void formQueue()
 		{
-			int percent=5;
+
 			for (int j = 0; j < primeNumber.Count; j++)
 			{
 				n = primeNumber[j];
@@ -70,18 +88,30 @@ namespace Prime_Numbers_Generation
 				   	    primeNumber.RemoveAt(i);
 					    i--;
 				    }
-			    }
-			    if(j == 10000)
-			    {
-			    	Console.WriteLine("Выполняется программа... {0}%", percent);
-			    	percent+=5;
-			    }
+                }
+
+                
 			   
 			}
 			
 		}
-		
-		public int ShowNum(int index)
+
+        void formQueueThread(List<int> prime)
+        {
+            for (int i = 0; i < prime.Count; i++)
+            {
+                if (prime[i] % n == 0 && prime[i] !=2)
+                {
+                        primeNumber.RemoveAt(i);
+                        i--;
+                    Thread.Sleep(0);
+                }
+                
+            }
+            
+        }
+
+        public int ShowNum(int index)
 		{
 			return primeNumber[index];
 		}
